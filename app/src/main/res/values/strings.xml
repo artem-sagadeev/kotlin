@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">DateTimeCalc</string>
+    <string name="date_interval_title">Date Interval</string>
+    <string name="date_add_title">Date Modifying</string>
+    <string name="time_interval_title">Time Interval</string>
+    <string name="date_interval_nav">From-To</string>
+    <string name="date_add_nav">Date ±</string>
+    <string name="time_interval_nav">From-To</string>
+    <string name="string_result">%s</string>
+    <string name="date_result_in_days">Days: %s</string>
+    <string name="date_result_in_weeks">Weeks: %s</string>
+    <string name="date_result_in_months">Months: %s</string>
+    <string name="date_result_in_years">Years: %s</string>
+    <string name="date_picker1_title">Pick first date</string>
+    <string name="date_picker2_title">Pick second date</string>
+    <string name="dialog_btn_ok">Pick</string>
+    <string name="time_add_title">Time Modifying</string>
+    <string name="time_add_nav">Time ±</string>
+    <string name="addAction">Add</string>
+    <string name="subtractAction">Subtract</string>
+    <string name="result">Result:</string>
+    <string name="today">Taday</string>
+    <string name="current_date_set">Current date has been set</string>
+    <string name="time_picker1_title">Pick start time</string>
+    <string name="time_picker2_title">Pick finish time</string>
+    <string name="time_result_in_hours">Hours:</string>
+    <string name="time_result_in_minutes">Minutes:</string>
+    <string name="bc_appendix">BC</string>
+    <string name="current_time_set">Current time has been set</string>
+</resources>

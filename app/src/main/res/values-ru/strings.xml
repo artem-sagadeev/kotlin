@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Калькулятор дат</string>
+    <string name="date_interval_title">Интервал дат</string>
+    <string name="time_interval_title">Интервал времени</string>
+    <string name="date_interval_nav">С - По</string>
+    <string name="date_add_nav">Дата ±</string>
+    <string name="time_interval_nav">С - По</string>
+    <string name="string_result">%s</string>
+    <string name="date_result_in_days">Дней: %s</string>
+    <string name="date_result_in_weeks">Нед.: %s</string>
+    <string name="date_result_in_months">Мес.: %s</string>
+    <string name="date_result_in_years">Лет: %s</string>
+    <string name="date_picker1_title">Выберите начальную дату</string>
+    <string name="date_picker2_title">Выберите конечную дату</string>
+    <string name="dialog_btn_ok">Выбрать</string>
+    <string name="date_add_title">Изменение даты</string>
+    <string name="time_add_title">Изменение времени</string>
+    <string name="time_add_nav">Время ±</string>
+    <string name="addAction">Добавить</string>
+    <string name="subtractAction">Вычесть</string>
+    <string name="result">Результат:</string>
+    <string name="today">Сегодня</string>
+    <string name="current_date_set">Установлена сегодняшняя дата</string>
+    <string name="time_picker1_title">Укажите начальное время</string>
+    <string name="time_picker2_title">Укажите конечное время</string>
+    <string name="time_result_in_hours">Часов: %s</string>
+    <string name="time_result_in_minutes">Минут: %s</string>
+    <string name="bc_appendix">до н.э.</string>
+    <string name="current_time_set">Установлено текущее время</string>
+</resources>
