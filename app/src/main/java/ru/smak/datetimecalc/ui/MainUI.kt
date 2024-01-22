@@ -80,37 +80,45 @@ fun MainUIPreview(){
 }
 
 /**
- * Функция композиции для отображения нижней панели приложения с вкладками для различных ViewPage.
+ * Функция композиции для отображения нижней панели приложения с вкладками для различных страниц.
  * @param currentViewPage Текущая выбранная страница просмотра
- * @param onChangeTab Callback функция  для обработки изменения вкладки
+ * @param onChangeTab Функция для обработки изменения вкладки
  */
 @Composable
 fun DtcBottomAppBar(
     currentViewPage: ViewPage,
     onChangeTab: (ViewPage)->Unit = {},
 ) {
-    // Строка, используемая для хранения вкладок меню 
+    // Контейнер, используемый для хранения вкладок меню 
     TabRow(
         currentViewPage.ordinal,
     ){
         // Цикл, добавляющий вкладки
         for (viewPage in ViewPage.entries) {
-            // Для каждой вкладки добавляется элемент Tab
+            // Для каждой вкладки добавляется элемент Tab, соответствующий странице приложения
             Tab(
+                // Вкладка отмечается как выбранная если соответствующая ей страница - текущая открытая
                 selected = currentViewPage == viewPage,
+                // При нажатии на вкладку происходит смена страницы
                 onClick = { onChangeTab(viewPage) },
                 modifier = Modifier.padding(vertical = 8.dp),
+                // Задаются цвета для нижней панели
                 selectedContentColor = MaterialTheme.colorScheme.primary,
                 unselectedContentColor = MaterialTheme.colorScheme.secondary,
             ) {
-                // Для 
+                // Элемент Tab состоит из элементов Icon (иконка) и элемента Text (текстовое поле)
                 Icon(
+                    // painter получаем из ресурсов по текущей странице
                     painter = painterResource(id = getNavIconId(viewPage)),
+                    // Описание иконки получаем из ресурсов по текцщей странице
                     contentDescription = stringResource(id = getPageTitleId(viewPage)),
+                    // Оттенок получаем из ресурсов по текущей странице
                     tint = colorResource(id = getNavIconTint(viewPage = viewPage)),
                 )
                 Text(
+                    // Текст получаем из ресурсов по идентификатору текущей страницы
                     text = stringResource(id = getNavTitleId(viewPage)),
+                    // Название текущей страницы выделяется жирным шрифтом
                     fontWeight = if (currentViewPage == viewPage) FontWeight.Bold else FontWeight.Normal,
                 )
             }
@@ -118,26 +126,39 @@ fun DtcBottomAppBar(
     }
 }
 
+/**
+ * Функция композиции для отображения верхней панели приложения.
+ * @param title название текущей страницы
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DtcTopAppBar(viewPage: ViewPage) {
+    // Добавляется верхняя панель приложения
     TopAppBar(
+        // Задается текст, соответствующий названию страницы
         title = {
+            // Текст получаем из ресурсов по идентификатору текущей страницы
             Text(text = stringResource(id = getPageTitleId(viewPage = viewPage)))
         },
+        // Задается иконка для открытия панели навигации
         navigationIcon = {
             IconButton(
                 onClick = { },
                 modifier = Modifier.padding(end = 8.dp)
             ) {
                 Icon(
+                    // painter получаем из ресурсов по текущей странице
                     painter = painterResource(id = getNavIconId(viewPage = viewPage)),
+                    // Описание иконки получаем из ресурсов по текцщей странице
                     contentDescription = stringResource(id = getPageTitleId(viewPage = viewPage)),
                 )
             }
         },
+        // Задаются цвета для верхней панели
         colors = TopAppBarDefaults.topAppBarColors(
+            // Цвет контейнера
             containerColor = MaterialTheme.colorScheme.primaryContainer,
+            // Цвет текста в верхней панели
             titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
         )
     )
