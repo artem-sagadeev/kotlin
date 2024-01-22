@@ -80,20 +80,22 @@ fun MainUIPreview(){
 }
 
 /**
- * Composable function for displaying the bottom app bar with tabs for different view pages.
- * 
- * @param currentViewPage The currently selected view page
- * @param onChangeTab Callback function to handle tab change
+ * Функция композиции для отображения нижней панели приложения с вкладками для различных ViewPage.
+ * @param currentViewPage Текущая выбранная страница просмотра
+ * @param onChangeTab Callback функция  для обработки изменения вкладки
  */
 @Composable
 fun DtcBottomAppBar(
     currentViewPage: ViewPage,
     onChangeTab: (ViewPage)->Unit = {},
 ) {
+    // Строка, используемая для хранения вкладок меню 
     TabRow(
         currentViewPage.ordinal,
     ){
+        // Цикл, добавляющий вкладки
         for (viewPage in ViewPage.entries) {
+            // Для каждой вкладки добавляется элемент Tab
             Tab(
                 selected = currentViewPage == viewPage,
                 onClick = { onChangeTab(viewPage) },
@@ -101,6 +103,7 @@ fun DtcBottomAppBar(
                 selectedContentColor = MaterialTheme.colorScheme.primary,
                 unselectedContentColor = MaterialTheme.colorScheme.secondary,
             ) {
+                // Для 
                 Icon(
                     painter = painterResource(id = getNavIconId(viewPage)),
                     contentDescription = stringResource(id = getPageTitleId(viewPage)),
